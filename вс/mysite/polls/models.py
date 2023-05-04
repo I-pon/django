@@ -17,10 +17,12 @@ class Question(models.Model):
     def __str__(self):
         '''функцией str выводим именно текст вопроса, а не индекс объекта'''
         return self.question_text
- 
+    
+
     def was_published_recently(self):
         '''пользовательский метод; показывает дату публикации'''
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
 class Choice(models.Model):
     '''класс Choice имеет 2 поля'''
