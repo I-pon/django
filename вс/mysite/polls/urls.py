@@ -1,17 +1,17 @@
-#конфигурация url для вызова сообщений
+'''конфигурация url для вызова сообщений'''
 from django.urls import path
 
 from . import views
-app_name = "polls"#добавляем пространства имен, чтобы джанго знал,
-                  #куда смотреть при использовании тега шаблона
-#ниже подключаем вызов сообщений, в зависимости от места, где находимся
+
+'''добавляем пространства имен, чтобы джанго знал,
+куда смотреть, при использовании тега шаблона:'''
+app_name = "polls" 
+
+
+'''подключаем вызов сообщений, в зависимости от места, где находимся'''
 urlpatterns = [
-    # ex: /polls/
-    path("", views.index, name="index"),
-    # ex: /polls/5/
-    path("<int:question_id>/", views.detail, name="detail"),
-    # ex: /polls/5/results/
-    path("<int:question_id>/results/", views.results, name="results"),
-    # ex: /polls/5/vote/
+    path("", views.IndexView.as_view(), name="index"),
+    path("<int:pk>/", views.DetailView.as_view(), name="detail"),
+    path("<int:pk>/results/", views.ResultsView.as_view(), name="results"),
     path("<int:question_id>/vote/", views.vote, name="vote"),
 ]
