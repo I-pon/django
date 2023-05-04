@@ -31,28 +31,17 @@ ALLOWED_HOSTS = []
 ''' имена всех приложений Django, которые 
  активированы в этом экземпляре Django'''
 INSTALLED_APPS = [
-    '''ссылка на класс, чтобы добавить
-    приложение в проект:'''
-    "polls.apps.PollsConfig", 
-
-    '''Сайт администратора:'''
-    'django.contrib.admin',
-
-    '''Система аутентификации:'''
-    'django.contrib.auth',
-
-    '''Структура для типов контента:'''
-    'django.contrib.contenttypes',
-
-    '''Структура сеанса:'''
-    'django.contrib.sessions',
-
-    '''Фреймворк обмена сообщениями:'''
-    'django.contrib.messages', 
-
-    '''Фреймворк для управления статическими файлами:'''
-    'django.contrib.staticfiles', 
+    
+    "polls.apps.PollsConfig",     #ссылка на класс, чтобы добавить 
+                                  #приложение в проект
+    'django.contrib.admin',       #Сайт администратора
+    'django.contrib.auth',        #Система аутентификации
+    'django.contrib.contenttypes',#Структура для типов контента
+    'django.contrib.sessions',    #Структура сеанса
+    'django.contrib.messages',    #Фреймворк обмена сообщениями
+    'django.contrib.staticfiles', #Фреймворк для управления статическими файлами
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -119,7 +108,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 '''язык:'''
 LANGUAGE_CODE = 'en-us' 
-
 '''часовой пояс:'''
 TIME_ZONE = 'Asia/Ashgabat' 
 
